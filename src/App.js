@@ -1,16 +1,20 @@
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom'
+import {BrowserRouter as Router ,Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar';
 import NewVehicleForm from './components/NewVehicleForm';
-import Vehicle from './components/VehicleList';
+import Home from './components/Home';
 
 function App() {
   return (
     <div >
       <Router>
-        <NavBar/>
-        <NewVehicleForm />
-        <Vehicle />
+        <div>
+          <NavBar/>
+          <NewVehicleForm />
+        </div>
+        <Routes>
+          <Route exact path="/" element={<Home/>}></Route>
+        </Routes>
       </Router>
     </div>
   );

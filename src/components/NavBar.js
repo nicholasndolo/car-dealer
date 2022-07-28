@@ -1,5 +1,6 @@
 import React from 'react';
 import {  NavLink } from 'react-router-dom';
+import NewVehicleForm from './NewVehicleForm';
 
 function NavBar (){
     
@@ -37,7 +38,7 @@ function NavBar (){
                         style={linkStyles}
                         activeStyles={{ background: "darkblue" }}
                         >
-                            About
+                            NewVehicleForm
                     </NavLink>
                     </li>
                         <NavLink

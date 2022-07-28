@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Vehicle from './Vehicle';
 
-function VehicleList() {
+function Home() {
     const [vehicleList, setVehicleList] = useState([])
 
     useEffect(()=> {
@@ -9,16 +9,18 @@ function VehicleList() {
         .then((res) => res.json())
         .then((data) => setVehicleList(data)) 
     }, [])
-    console.log(VehicleList)
+    let vehicle = vehicleList.map((vehicle)=>(
+        <Vehicle key={vehicle.id} carImage={vehicle.image} carName={vehicle.name} carPrice={vehicle.price} year={vehicle.year} carId={vehicle.id}/>
+    ))
+
     return (
-        <div>
+        <div className="container">
             <h3>Featured Listings</h3>
-            {vehicleList.map((vehicle)=>(
-                <Vehicle key={vehicle.id} carImage={vehicle.image} carName={vehicle.name} carPrice={vehicle.price} year={vehicle.year} carId={vehicleList.id}/>
-            ))}
-            <Vehicle />
+            <div className="row">
+            {vehicle}
+            </div>
         </div>
     )
 }
 
-export default VehicleList;
+export default Home;
