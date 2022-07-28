@@ -1,19 +1,22 @@
-import React, {useEffect} from 'react';
-import Vihicle from './Vihicle';
+import React, {useEffect, useState} from 'react';
+import Vehicle from './Vehicle';
 
-function VehicleList(){
-    const [vehicleList, setVehicleList] = useEffect([])
+function VehicleList() {
+    const [vehicleList, setVehicleList] = useState([])
 
     useEffect(()=> {
         fetch("https://pacific-coast-19269.herokuapp.com/Cars/")
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => setVehicleList(data)) 
     }, [])
+    console.log(VehicleList)
     return (
         <div>
+            <h3>Featured Listing</h3>
             {vehicleList.map((vehicle)=>(
-                <Vihicle key={vehicle.id} name={vehicle.name} price={vehicle.price} year={vehicle.year}/>
+                <Vehicle key={vehicle.id} carImage={vehicle.image} carName={vehicle.name} carPrice={vehicle.price} year={vehicle.year} carId={vehicleList.id}/>
             ))}
+            <Vehicle />
         </div>
     )
 }

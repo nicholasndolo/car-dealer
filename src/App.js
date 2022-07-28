@@ -1,28 +1,17 @@
-// import React from 'react';
-// import NewVehicleForm from './NewVehicleForm';
-// import VehicleList from './VehicleList';
-
-
-// function App() {
-//     return (
-//         <div>
-//             <NewVehicleForm />
-//             <VehicleList />
-//         </div>
-
-//     )
-// }
-
-
-// export default App;
 import React from 'react';
-//import './App.css';
+import {BrowserRouter as Router} from 'react-router-dom'
+import NavBar from './components/NavBar';
 import NewVehicleForm from './components/NewVehicleForm';
+import Vehicle from './components/VehicleList';
 
 function App() {
   return (
-    <div className="App">
-      <NewVehicleForm />
+    <div >
+      <Router>
+        <NavBar/>
+        <NewVehicleForm />
+        <Vehicle />
+      </Router>
     </div>
   );
 }

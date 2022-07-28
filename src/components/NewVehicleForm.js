@@ -2,13 +2,24 @@ import React from 'react';
 
 function NewVehicleForm(){
     return (
-        <form className="group-form">
+        <form >
+            <div className="group-form">
             <h3>Add new car</h3>
-            <input className="form-control" type="text" placeholder="Model"/>
-            <input className="form-control" type="text" placeholder="number" placeholder="Price"/>
-            <input className="form-control" type="text" placeholder="number" placeholder="Year"/>
-            <input type="image"  />
-            <input type="submit"/>
+            <input
+                className="form-control"
+                type="text"
+                placeholder="Model"/>
+            <input
+                className="form-control"
+                type="text"
+                placeholder="Price"/>
+            <input
+                className="form-control"
+                type="text"
+                placeholder="Year"/>
+            <input
+                className="btn btn-primary"type="submit"/>
+            </div>
         </form>
     )
 }
