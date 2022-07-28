@@ -12,7 +12,7 @@ function VehicleList() {
     console.log(VehicleList)
     return (
         <div>
-            <h3>Featured Listing</h3>
+            <h3>Featured Listings</h3>
             {vehicleList.map((vehicle)=>(
                 <Vehicle key={vehicle.id} carImage={vehicle.image} carName={vehicle.name} carPrice={vehicle.price} year={vehicle.year} carId={vehicleList.id}/>
             ))}

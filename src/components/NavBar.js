@@ -13,33 +13,49 @@ function NavBar (){
         color: "white",
       };
     return (
-        <nav>
-            <NavLink
-                to="/"
-                exact
-                style={linkStyles}
-                activeStyles={{
-                    background: "darkblue",
-                }}
-            >
-                    Home
-            </NavLink>
-            <NavLink
-                to="/about"
-                exact
-                style={linkStyles}
-                activeStyles={{ background: "darkblue" }}
-                >
-                    About
-            </NavLink>
-            <NavLink
-                to="/login"
-                exact
-                style={linkStyles}
-                activeStyles={{ background: "darkblue" }}
-            >
-                    Login
-            </NavLink>
+        <nav className="navbar bg-dark">
+            <div className="container-fluid">
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <NavLink
+                        className="nav-link"
+                        to="/"
+                        exact
+                        style={linkStyles}
+                        activeStyles={{
+                            background: "darkblue",
+                        }}
+                        >
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                        className="nav-link"
+                        to="/about"
+                        exact
+                        style={linkStyles}
+                        activeStyles={{ background: "darkblue" }}
+                        >
+                            About
+                    </NavLink>
+                    </li>
+                        <NavLink
+                        className="nav-link"
+                        to="/login"
+                        exact
+                        style={linkStyles}
+                        activeStyles={{ background: "darkblue" }}
+                        >
+                            Login
+                        </NavLink>
+                    <li>
+
+                    </li>
+
+                
+                </ul>
+            </div>    
         </nav>
     )
 }
