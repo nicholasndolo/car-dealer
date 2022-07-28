@@ -11,10 +11,10 @@ function App() {
       <Router>
         <div>
           <NavBar/>
-          <NewVehicleForm />
         </div>
         <Routes>
           <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/newvehicleform" element={<NewVehicleForm/>}></Route>
           <Route exact path="/vehicle/:carId" element={<Details/>}></Route>
         </Routes>
       </Router>

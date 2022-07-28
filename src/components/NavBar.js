@@ -33,7 +33,7 @@ function NavBar (){
                     <li>
                         <NavLink
                         className="nav-link"
-                        to="/about"
+                        to="/newvehicleform"
                         exact
                         style={linkStyles}
                         activeStyles={{ background: "darkblue" }}

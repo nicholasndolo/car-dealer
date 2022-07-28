@@ -18,18 +18,18 @@ function Details(){
             setName(data.name);
             setPrice(data.price);
             setManufacturer(data.manufacturer);
-            setYear(data.year);
+            setYear(data.YOM);
             setImage(data.image);    
         }) 
     }, [])
     return (
-        <div>
+        <div className="container">
             <center>
-                <h3>{name}</h3>
-                <img src={image} style ={{height: 250 + "px", width: 500 + "px"}}/>
-                <h4>{price}</h4>
-                <h4>{manufacturer}</h4>
-                <h4>{year}</h4>
+                <img src={image} style ={{height: 300 + "px", width: 500 + "px"}}/>
+                <h3 >Name: {name}</h3>
+                <h4>Price: {price}</h4>
+                <h3>Manufacturer: {manufacturer}</h3>
+                <h4>Year of Make: {year} | Brand New</h4>
             </center>
         </div>
     )
