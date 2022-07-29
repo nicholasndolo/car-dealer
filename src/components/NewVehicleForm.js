@@ -1,11 +1,11 @@
 import React,{useEffect, useState} from 'react';
 
-function NewVehicleForm(){
+function NewVehicleForm({handleAddNewVehicle}){
     const [newVehicle, setNewVehicle] = useState({
         name: "",
         image: "",
         price: "",
-        YOM: "",
+        yom: "",
         manufacturer: "",
     })
 
@@ -19,10 +19,11 @@ function NewVehicleForm(){
 
         const vehicleObj  = {
             name: newVehicle.name,
-            image: newVehicle.image,
+            image: newVehicle.image, 
             price: newVehicle.price,
-            YOM: newVehicle.YOM,
+            YOM: newVehicle.yom,
             manufacturer: newVehicle.manufacturer
+
         }
 
             fetch("https://pacific-coast-19269.herokuapp.com/Cars/",{
@@ -33,15 +34,15 @@ function NewVehicleForm(){
                 body: JSON.stringify(vehicleObj),
             })
             .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
+            .then((newVehicle) => {
+                handleAddNewVehicle(newVehicle);
             })
         }
     //}
 
 
     return (
-        <div className="container">
+        <div className="container form">
             <form onSubmit={handleSubmit}>
                 <div className="group-form">
                     <h3>Post new car</h3>
@@ -70,7 +71,7 @@ function NewVehicleForm(){
                         className="form-control"
                         type="text"
                         name="price"
-                        price={newVehicle.price}
+                        value= {newVehicle.price}
                         onChange={handleChange}
                         placeholder="Price"/>
                 </div>
@@ -78,19 +79,19 @@ function NewVehicleForm(){
                     <label for="year" className="form-label">Year of Manufacture</label>
                     <input
                         className="form-control"
-                        type="number"
-                        name="year"
-                        value={NewVehicleForm.YOM}
+                        type= "text"
+                        name="yom"
+                        value={newVehicle.yom}
                         onChange={handleChange}
-                        placeholder="YOM"/>
+                        placeholder="yom"/>
                 </div>
                 <div>
-                    <label for="year" className="form-label">Manufacturer</label>
+                    <label for="manufacturer" className="form-label">Manufacturer</label>
                     <input
                         className="form-control"
                         type="text"
                         name="manufacturer"
-                        value={NewVehicleForm.manufacturer}
+                        value={newVehicle.manufacturer}
                         onChange={handleChange}
                         placeholder="Manufacturing company"/>
                 </div>

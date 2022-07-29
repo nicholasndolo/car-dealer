@@ -4,61 +4,36 @@ import NewVehicleForm from './NewVehicleForm';
 
 function NavBar (){
     
-    const linkStyles = {
-        display: "inline-block",
-        width: "50px",
-        padding: "12px",
-        margin: "0 6px 6px",
-        background: "blue",
-        textDecoration: "none",
-        color: "white",
-      };
     return (
-        <nav className="navbar bg-dark">
-            <div className="container-fluid">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
+        <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
                         <NavLink
                         className="nav-link"
                         to="/"
                         exact
-                        style={linkStyles}
                         activeStyles={{
-                            background: "darkblue",
+                            background: "white",
                         }}
                         >
-                            Home
+                           <h3>Home</h3>
                         </NavLink>
-                    </li>
-                    <li>
                         <NavLink
                         className="nav-link"
                         to="/newvehicleform"
                         exact
-                        style={linkStyles}
                         activeStyles={{ background: "darkblue" }}
                         >
-                            NewVehicleForm
+                            <h3>Post Vehicle</h3>
                     </NavLink>
-                    </li>
-                        <NavLink
+                    {/* <NavLink
                         className="nav-link"
                         to="/login"
                         exact
-                        style={linkStyles}
                         activeStyles={{ background: "darkblue" }}
                         >
                             Login
-                        </NavLink>
-                    <li>
+                    </NavLink> */}
 
-                    </li>
-
-                
-                </ul>
-            </div>    
         </nav>
-    )
-}
+    )}
 
 export default NavBar;
