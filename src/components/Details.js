@@ -7,6 +7,7 @@ function Details(){
     const [price, setPrice] = useState("")
     const [manufacturer ,setManufacturer] = useState("")
     const [year, setYear] = useState("")
+    const [reviews, setReviews] = useState([""])
 
     let {carId} = useParams()
 
@@ -19,9 +20,15 @@ function Details(){
             setPrice(data.price);
             setManufacturer(data.manufacturer);
             setYear(data.YOM);
-            setImage(data.image);    
+            setImage(data.image); 
+            setReviews(data.reviews);
+              
+
         }) 
     }, [])
+
+
+ 
     return (
         <div className="container">
             <center>
@@ -31,6 +38,15 @@ function Details(){
                 <h3>Manufacturer: {manufacturer}</h3>
                 <h4>Year of Make: {year} | Brand New</h4>
             </center>
+            <h3>Customer reviews</h3>
+            <div>
+                <ul>      
+                    {reviews?reviews.map(review =>
+                    <li key={review}> {reviews} </li>): "No reviews"}
+                </ul>
+            
+
+            </div>
         </div>
     )
 }

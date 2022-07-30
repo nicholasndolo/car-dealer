@@ -10,9 +10,9 @@ function NavBar (){
                         className="nav-link"
                         to="/"
                         exact
-                        activeStyles={{
-                            background: "white",
-                        }}
+                        // activeStyles={{
+                        //     background: "white",
+                        // }}
                         >
                            <h3>Home</h3>
                         </NavLink>
@@ -20,7 +20,7 @@ function NavBar (){
                         className="nav-link"
                         to="/newvehicleform"
                         exact
-                        activeStyles={{ background: "darkblue" }}
+                        // activeStyles={{ background: "darkblue" }}
                         >
                             <h3>Post Vehicle</h3>
                     </NavLink>

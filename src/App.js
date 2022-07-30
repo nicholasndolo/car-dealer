@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import NewVehicleForm from './components/NewVehicleForm';
 import Home from './components/Home';
 import Details from './components/Details';
-import Aside from './components/Aside';
+import UpdateDetails from './components/UpdateInfo';
 
 function App() {
   const [vehicleList, setVehicleList] = useState([])
@@ -29,7 +29,6 @@ function App() {
           <Route exact path="/" element={<Home vehicleList={vehicleList} setVehicleList={setVehicleList}/>}></Route>
           <Route exact path="/newvehicleform" element={<NewVehicleForm handleAddNewVehicle={handleAddNewVehicle}/>}></Route>
           <Route exact path="/vehicle/:carId" element={<Details/>}></Route>
-          <Route>{Aside}</Route>
         </Routes>
       </Router>
     </div>

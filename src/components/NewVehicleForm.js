@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react';
+import UpdateInfo from './UpdateInfo';
 
 function NewVehicleForm({handleAddNewVehicle}){
     const [newVehicle, setNewVehicle] = useState({
@@ -43,6 +44,7 @@ function NewVehicleForm({handleAddNewVehicle}){
 
     return (
         <div className="container form">
+            <UpdateInfo />
             <form onSubmit={handleSubmit}>
                 <div className="group-form">
                     <h3>Post new car</h3>

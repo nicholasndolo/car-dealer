@@ -18,11 +18,18 @@ code {
 }
 
 .App{
-  background-color: azure;
+  background-color: yellow;
+  height: 100vh;
 }
 
 .container>h2{
   text-align: center;
   color:brown
   
+}
+
+.container-fluid{
+  height: 400px;
+  width: 400px;
+  ;
 }
