@@ -1,10 +1,14 @@
 import React from 'react'; 
 
 function UpdateInfo(){
+    function handleChange(){
+
+    }
+
+    fu
     return (
-        <div className="container">
-            <form >
-            {/* <form onSubmit={handleSubmit}> */}
+        <div className="newItem">
+            <form onSubmit={handleSubmit}>
                 <div className="group-form">
                     <h3>Update Information</h3>
                     <label for="Name" className="form-label">Name</label>
@@ -13,7 +17,7 @@ function UpdateInfo(){
                         type="text"
                         name = "name"
                         value="0"
-                        //onChange={handleChange}
+                        onChange={handleChange}
                         placeholder="Vehicle Name"/>
                 </div>
                 <div>
@@ -23,7 +27,7 @@ function UpdateInfo(){
                         type="text"
                         name="image"
                         value="0"
-                        // onChange={handleChange}
+                        onChange={handleChange}
                         placeholder="Enter image url here..."/>
                 </div>
                 <div>
@@ -33,7 +37,7 @@ function UpdateInfo(){
                         type="text"
                         name="price"
                         value= "0"
-                        // onChange={handleChange}
+                        onChange={handleChange}
                         placeholder="Price"/>
                 </div>
                 <div>
@@ -43,7 +47,7 @@ function UpdateInfo(){
                         type= "text"
                         name="yom"
                         value="0"
-                        // onChange={handleChange}
+                        onChange={handleChange}
                         placeholder="yom"/>
                 </div>
                 <div>
@@ -53,7 +57,7 @@ function UpdateInfo(){
                         type="text"
                         name="manufacturer"
                         value="0"
-                        // onChange={handleChange}
+                        onChange={handleChange}
                         placeholder="Manufacturing company"/>
                 </div>
                <div>
