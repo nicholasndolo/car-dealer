@@ -13,6 +13,7 @@ function Vehicle({carName, carPrice, carImage, carId, vehicleList, setVehicleLis
     
     })
   }
+
     return (
       <div className="card" style={{width: 18 + 'rem'}}>
         <img src={carImage} className="card-img-top" alt={carImage} />
@@ -21,6 +22,7 @@ function Vehicle({carName, carPrice, carImage, carId, vehicleList, setVehicleLis
           <h5>Price:{carPrice}</h5>
 
           <Link to={"/vehicle/" + carId} className="btn btn-primary">View listing</Link>
+          <Link to={"/vehicle/" + carId} className="btn btn-secondary">Update</Link>
           <button className="btn btn-warning mt-1" onClick={handleDelete}>Delete</button>
         </div>
     </div>

@@ -1,32 +1,53 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
+import {useParams} from 'react-router-dom'
+
 
 function UpdateInfo(){
-    function handleChange(){
+
+    const [updatedInfo, setUpdatedInfo] = useState({
+        image: "",
+        price: "",  
+    })
+
+    let {carId} = useParams()
+
+    function handleChange(e){
+        setUpdatedInfo({...updatedInfo, [e.target.name]: e.target.value})
 
     }
 
-    fu
+    function handleSubmit(e){
+        e.preventDefault();
+         
+
+        const updatedObj = {
+            image: updatedInfo.image,
+            price: updatedInfo.price
+        }
+
+        fetch(`https://pacific-coast-19269.herokuapp.com/Cars/${carId}`,{
+             method: "PATCH",
+             headers: {
+                 "Content-Type": "application/json",
+             },
+             body: JSON.stringify(updatedObj),
+
+         })
+         .then((res) => res.json())
+         .then((updatedDetails) => console.log(updatedDetails))
+    }
+
     return (
-        <div className="newItem">
+        <div className="updateForm">
             <form onSubmit={handleSubmit}>
-                <div className="group-form">
                     <h3>Update Information</h3>
-                    <label for="Name" className="form-label">Name</label>
-                    <input
-                        className="form-control"
-                        type="text"
-                        name = "name"
-                        value="0"
-                        onChange={handleChange}
-                        placeholder="Vehicle Name"/>
-                </div>
                 <div>
                     <label for="image" className="form-label">Image URL</label>
                     <input
                         className="form-control"
                         type="text"
                         name="image"
-                        value="0"
+                        value={updatedInfo.image}
                         onChange={handleChange}
                         placeholder="Enter image url here..."/>
                 </div>
@@ -36,29 +57,9 @@ function UpdateInfo(){
                         className="form-control"
                         type="text"
                         name="price"
-                        value= "0"
+                        value= {updatedInfo.price}
                         onChange={handleChange}
                         placeholder="Price"/>
-                </div>
-                <div>
-                    <label for="year" className="form-label">Year of Manufacture</label>
-                    <input
-                        className="form-control"
-                        type= "text"
-                        name="yom"
-                        value="0"
-                        onChange={handleChange}
-                        placeholder="yom"/>
-                </div>
-                <div>
-                    <label for="manufacturer" className="form-label">Manufacturer</label>
-                    <input
-                        className="form-control"
-                        type="text"
-                        name="manufacturer"
-                        value="0"
-                        onChange={handleChange}
-                        placeholder="Manufacturing company"/>
                 </div>
                <div>
                <input

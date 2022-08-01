@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom'
+import UpdateInfo from './UpdateInfo';
 
 function Details(){
     const [image, setImage] = useState("")
@@ -31,6 +32,7 @@ function Details(){
  
     return (
         <div className="container">
+            <UpdateInfo />
             <center>
                 <img src={image} style ={{height: 300 + "px", width: 500 + "px"}}/>
                 <h3 >Name: {name}</h3>
@@ -40,11 +42,16 @@ function Details(){
             </center>
             <h3>Customer reviews</h3>
             <div>
-                <ul>      
-                    {reviews?reviews.map(review =>
+                {/* <ul>{reviews?reviews.map((review) =>
                     <li key={review}> {reviews} </li>): "No reviews"}
                 </ul>
-            
+             */}
+             <ul>
+                 <li>{reviews[0]}</li>
+                 <li>{reviews[1]}</li>
+                 <li>{reviews[2]}</li>
+                 <li>{reviews[3]}</li>
+             </ul>
 
             </div>
         </div>

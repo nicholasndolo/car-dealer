@@ -1,4 +1,5 @@
 import React from 'react';
+//import UpdateInfo from './UpdateInfo';
 import Vehicle from './Vehicle';
 
 function Home({vehicleList, setVehicleList}) {
@@ -13,6 +14,9 @@ function Home({vehicleList, setVehicleList}) {
             <div className="row">
             {vehicle}
             </div>
+            <div>
+            </div>
+             
         </div>
     )
 }

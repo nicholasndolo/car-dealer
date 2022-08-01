@@ -44,7 +44,6 @@ function NewVehicleForm({handleAddNewVehicle}){
 
     return (
         <div className="newItem">
-            <UpdateInfo />
             <form onSubmit={handleSubmit}>
                 <div className="group-form">
                     <h3>Post new car</h3>
