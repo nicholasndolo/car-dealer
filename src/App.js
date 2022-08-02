@@ -19,6 +19,17 @@ function App() {
       setVehicleList([...vehicleList, newVehicle]);
     }
 
+    function handleItemUpdate(updatedItem){
+      const updatedVehicleList =vehicleList.map((vehicle) => {
+        if(vehicle.id === updatedItem.id){
+          return updatedItem
+        }else{
+          return vehicle
+        }
+      });
+      setVehicleList(updatedVehicleList);
+    }
+
   return (
     <div className="App">
       <Router>
@@ -28,7 +39,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home vehicleList={vehicleList} setVehicleList={setVehicleList}/>}></Route>
           <Route exact path="/newvehicleform" element={<NewVehicleForm handleAddNewVehicle={handleAddNewVehicle}/>}></Route>
-          <Route exact path="/vehicle/:carId" element={<Details/>}></Route>
+          <Route exact path="/vehicle/:carId" element={<Details  onUpdatedItem={handleItemUpdate}/>}></Route>
         </Routes>
       </Router>
     </div>

@@ -2,17 +2,16 @@ import React, {useState} from 'react';
 import {useParams} from 'react-router-dom'
 
 
-function UpdateInfo(){
+function UpdateInfo({onUpdatedItem}){
 
-    const [updatedInfo, setUpdatedInfo] = useState({
-        image: "",
+    const [updatedPrice, setUpdatedPrice] = useState({
         price: "",  
     })
 
     let {carId} = useParams()
 
     function handleChange(e){
-        setUpdatedInfo({...updatedInfo, [e.target.name]: e.target.value})
+        setUpdatedPrice({...updatedPrice, [e.target.name]: e.target.value})
 
     }
 
@@ -21,8 +20,8 @@ function UpdateInfo(){
          
 
         const updatedObj = {
-            image: updatedInfo.image,
-            price: updatedInfo.price
+
+            price: updatedPrice.price
         }
 
         fetch(`https://pacific-coast-19269.herokuapp.com/Cars/${carId}`,{
@@ -34,30 +33,20 @@ function UpdateInfo(){
 
          })
          .then((res) => res.json())
-         .then((updatedDetails) => console.log(updatedDetails))
+         .then((updatedItem) => onUpdatedItem(updatedItem))
     }
 
     return (
         <div className="updateForm">
             <form onSubmit={handleSubmit}>
-                    <h3>Update Information</h3>
-                <div>
-                    <label for="image" className="form-label">Image URL</label>
-                    <input
-                        className="form-control"
-                        type="text"
-                        name="image"
-                        value={updatedInfo.image}
-                        onChange={handleChange}
-                        placeholder="Enter image url here..."/>
-                </div>
+                    <h3>Update Price</h3>
                 <div>
                     <label for="price" className="form-label">Price</label>
                     <input
                         className="form-control"
                         type="text"
                         name="price"
-                        value= {updatedInfo.price}
+                        value= {updatedPrice.price}
                         onChange={handleChange}
                         placeholder="Price"/>
                 </div>

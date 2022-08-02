@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom'
 import UpdateInfo from './UpdateInfo';
 
-function Details(){
+function Details({onUpdatedItem}){
     const [image, setImage] = useState("")
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
@@ -32,7 +32,7 @@ function Details(){
  
     return (
         <div className="container">
-            <UpdateInfo />
+            <UpdateInfo onUpdatedItem={onUpdatedItem} />
             <center>
                 <img src={image} style ={{height: 300 + "px", width: 500 + "px"}}/>
                 <h3 >Name: {name}</h3>
