@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import NewVehicleForm from './components/NewVehicleForm';
 import Home from './components/Home';
 import Details from './components/Details';
-//import UpdateInfo from './components/UpdateInfo';
 
 function App() {
   const [vehicleList, setVehicleList] = useState([])
