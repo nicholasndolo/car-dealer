@@ -67,8 +67,8 @@ SOFTWARE.
 Email-[Nicholas Ndolo]
 (niclolas.ndolo@student.moringaschool.com)
 
-[Go Back to the top](#product-supply)
+[Go Back to the top](#car-dealer)
 
 ## Live Link
 
-- Click this link to view the live application http://localhost:9292/products
+- Click this link to view the live application https://pacific-coast-19269.herokuapp.com/Cars/
